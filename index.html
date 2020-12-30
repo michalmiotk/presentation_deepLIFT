@@ -26,12 +26,18 @@
       <ol>
         <li>Short introduction</li>
         <li>DeepLIFT history</li>
-        <li>Which problem DeepLIFT solve?</li>
-        <li>When DeepLIFT fails?</li>
         <li>Demo</li>
+        <li>When DeepLIFT fails?</li>
         <li>Future work</li>
         <li>Links</li>
       </ol> 
+    </section>
+    <section>
+      <h6>Introduction</h6>
+      DeepLIFT purpose is having Explainable AI. This algorithm can be used in e.g linear and in convolutional neural networks.
+      Here is presented approach to XAI which is better than pure gradient*input. 
+      It's basics explanation is to give importance of activation layer gradient when activation from normal input have significant difference from baseline input vector.
+      This approach is based on working with reference. Reference is often zeros input vector or blurred image.
     </section>
     <section>
       <section>
@@ -55,17 +61,32 @@
       </section>
     </section>
     <section>
+      <h4>Demo</h4>
+      <p>Demo Code implementation is based on Captum source code</p>   
+      <a href="url">https://colab.research.google.com/drive/1XNG--rBs5c6wZFJiBQZrnBvKSXoX7CJP?usp=sharing</a>
+      <img src="images/desired_output.png"/>
+    </section>
+    <section>
       <section>
       <h4>When DeepLIFT fails?</h4>
       <p>DeepLIFT not satisfy axiom -  Implementation Invariance - if two different neural networks gives for same inputs same outputs
         predictions should be the same
       </p>
-    </section>
-    <section>
-      <h4>When DeepLIFT fails?</h4>
-      <img src="images/break_axiom.png"/>
-      <p>image from Axiomatic Attribution for Deep Networks</p>
-    </section>
+      </section>
+      <section>
+        <h4>When DeepLIFT fails?</h4>
+        <img src="images/break_axiom.png"/>
+        <p>image from Axiomatic Attribution for Deep Networks</p>
+      </section>
+      <section>
+        <h4>DeepLIFT fails when some pixel are changed</h4>
+        <div class="r-hstack justify-center">
+            <img src="images/out_without.png" alt="Snow" style="width:30%">
+            <img src="images/out_without_mod.png" alt="Forest" style="width:30%">
+        </div>
+        <p>left image - DeepLIFT on original elephant, left after change each pixel in range -8 to 8</p>
+        <p>this approach is from paper ,,Interpretation of Neural Networks is Fragile''</p>
+      </section>
     </section>
     <section>
       <section>
@@ -92,6 +113,7 @@
         <h4>Links</h4>
         <ul>
           <li>Utilizing Explainable AI for Quantization and Pruning of Deep Neural Networks https://arxiv.org/pdf/2008.09072.pdf</li>
+          <li>Interpretation of Neural Networks is Fragile https://machine-learning-and-security.github.io/papers/mlsec17_paper_18.pdf</li>
         </ul>
       </section>
     </section>
